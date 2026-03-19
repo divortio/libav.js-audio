@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const version = process.argv[2] || '6.8.8.0';
 const variant = process.argv[3] || 'audio';
@@ -76,7 +77,11 @@ engines.forEach(engine => {
     }
 
     fs.writeFileSync(path.join(engineDir, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
-    console.log(`Packaged ${engineDirName} successfully.`);
+    
+    // Create zip for this engine variant securely intuitively cleanly
+    execSync(`zip -r ../${engineDirName}.zip .`, { cwd: engineDir });
+
+    console.log(`Packaged and zipped ${engineDirName} successfully.`);
 });
 
 console.log('All builds packaged successfully.');
