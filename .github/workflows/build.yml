@@ -1,0 +1,43 @@
+name: Build Custom libav.js
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-libav:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build and Package Custom Engines
+        run: bash build/sync_and_build.sh
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: libavjs-custom-audio
+          path: dist/libav-*-audio/*.zip
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/libav-*-audio/*.zip
+          generate_release_notes: true
+
+      - name: Trigger Downstream audio-decode-libav build
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: divortio/audio-decode-libav
+          event-type: upstream-libav-updated
