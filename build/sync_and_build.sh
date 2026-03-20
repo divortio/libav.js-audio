@@ -30,19 +30,19 @@ echo "--- Running Step 03_BUILD ---"
 cd "$DIR/steps/03_BUILD"
 if [ -f "build_custom_libav.sh" ]; then bash build_custom_libav.sh; fi
 
-# 04_VALIDATE
-echo "--- Running Step 04_VALIDATE ---"
+# 04_PACKAGE
+echo "--- Running Step 04_PACKAGE ---"
+cd "$DIR/steps/06_PACKAGE"
+if [ -f "package_builds.js" ]; then node package_builds.js; fi
+
+# 05_VALIDATE
+echo "--- Running Step 05_VALIDATE ---"
 cd "$DIR/steps/04_VALIDATE"
 if [ -f "validateBuilds.test.mjs" ]; then node --test validateBuilds.test.mjs; fi
 
-# 05_TEST
-echo "--- Running Step 05_TEST ---"
+# 06_TEST
+echo "--- Running Step 06_TEST ---"
 cd "$DIR/steps/05_TEST"
 if [ -f "testBuilds.test.mjs" ]; then node --test testBuilds.test.mjs; fi
-
-# 06_PACKAGE
-echo "--- Running Step 06_PACKAGE ---"
-cd "$DIR/steps/06_PACKAGE"
-if [ -f "package_builds.js" ]; then node package_builds.js; fi
 
 echo "LibAV build pipeline completed successfully!"

@@ -6,7 +6,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export async function validateBuild(engineName, variant = 'audio', version = '6.8.8.0') {
-    const pkgDir = path.join(__dirname, 'vendor', 'libav.js', 'dist', `libav-${version}-${variant}`, `libav-${version}-${variant}.${engineName}`);
+    // Clear global LibAV to prevent base path caching across module evaluations in Node
+    if (typeof global !== 'undefined') {
+        delete global.LibAV;
+        delete global.libav;
+    }
+    
+    const pkgDir = path.join(__dirname, '..', '..', '..', 'dist', `libav-${version}-${variant}`, `libav-${version}-${variant}.${engineName}`);
     const pkgFile = path.join(pkgDir, 'package.json');
     if (!fs.existsSync(pkgFile)) {
         throw new Error(`Package directory not found: ${pkgDir}`);
@@ -39,8 +45,14 @@ export async function validateBuild(engineName, variant = 'audio', version = '6.
             throw new Error('LibAV factory not exported correctly.');
         }
 
+        const initOpts = { noworker: true };
+        if (engineName.startsWith('asm')) initOpts.nowasm = true;
+        if (engineName.startsWith('thr')) initOpts.yesthreads = true;
+
+        console.log(`Testing engine: ${engineName}`, typeof WebAssembly);
+
         // Initialize LibAV instance without web workers (force node/direct mode for basic node test)
-        const libav = await LibAVFactory.LibAV({ noworker: true }); 
+        const libav = await LibAVFactory.LibAV(initOpts); 
         
         if (!libav || typeof libav.ff_init_demuxer_file !== 'function') {
             throw new Error('LibAV instance failed to initialize or missing expected demuxer methods.');

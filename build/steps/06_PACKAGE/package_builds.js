@@ -19,7 +19,7 @@ const engines = [
     { name: 'wasm.js', files: [`libav-${version}-${variant}.wasm.js`, `libav-${version}-${variant}.wasm.wasm`, `libav-${version}-${variant}.js`], main: `libav-${version}-${variant}.js`, format: 'cjs' },
     { name: 'wasm.mjs', files: [`libav-${version}-${variant}.wasm.mjs`, `libav-${version}-${variant}.wasm.wasm`, `libav-${version}-${variant}.mjs`], main: `libav-${version}-${variant}.mjs`, format: 'esm' },
     { name: 'thr.js', files: [`libav-${version}-${variant}.thr.js`, `libav-${version}-${variant}.thr.wasm`, `libav-${version}-${variant}.js`], main: `libav-${version}-${variant}.js`, format: 'cjs' },
-    { name: 'thr.mjs', files: [`libav-${version}-${variant}.thr.mjs`, `libav-${version}-${variant}.thr.wasm`, `libav-${version}-${variant}.mjs`], main: `libav-${version}-${variant}.mjs`, format: 'esm' }
+    { name: 'thr.mjs', files: [`libav-${version}-${variant}.thr.mjs`, `libav-${version}-${variant}.thr.wasm`, `libav-${version}-${variant}.mjs`], main: `libav-${version}-${variant}.mjs`, format: 'esm' },
 ];
 
 engines.forEach(engine => {

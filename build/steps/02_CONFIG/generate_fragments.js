@@ -18,7 +18,9 @@ const fragments = [
     "decoder-pcm_s24be", "decoder-pcm_s24le", "decoder-pcm_s32be", "decoder-pcm_s32le",
     "decoder-pcm_s64be", "decoder-pcm_s64le", "decoder-pcm_s8", "decoder-pcm_u16be",
     "decoder-pcm_u16le", "decoder-pcm_u24be", "decoder-pcm_u24le", "decoder-pcm_u32be",
-    "decoder-pcm_u32le", "decoder-pcm_u8", "encoder-pcm_f32le",
+    "decoder-pcm_u32le", "decoder-pcm_u8", "encoder-pcm_f32le", "decoder-pcm_alaw", "decoder-pcm_mulaw",
+    "decoder-adpcm_ima_qt", "decoder-adpcm_ima_wav", "decoder-gsm", "decoder-gsm_ms",
+    "decoder-qoa",
     "decoder-ra_144", "decoder-ra_288", "decoder-ralf", "decoder-sipr",
     "decoder-wavpack", "decoder-wmalossless", "decoder-wmapro", "decoder-wmav1",
     "decoder-wmav2", "decoder-wmavoice", "decoder-cook", "decoder-dvaudio",
@@ -29,6 +31,8 @@ const fragments = [
     "format-mp3", "demuxer-mp3", "muxer-mp3",
     "format-ogg", "demuxer-ogg", "muxer-ogg",
     "format-wav", "demuxer-wav", "muxer-wav",
+    "format-aiff", "demuxer-aiff", "muxer-aiff",
+    "format-qoa", "demuxer-qoa", "muxer-qoa",
     "demuxer-au", "demuxer-caf", "demuxer-wv", "demuxer-pcm_f32le", "muxer-pcm_f32le",
 
     // --- All Video / Container Demuxers (to extract audio) ---

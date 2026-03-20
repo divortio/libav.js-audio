@@ -5,8 +5,9 @@ import fs from 'node:fs';
 
 const libavDistPath = path.join(process.cwd(), '../../../src/libav.js/dist');
 
+const engines = ['asm.js', 'asm.mjs', 'wasm.js', 'wasm.mjs', 'thr.js', 'thr.mjs'];
+
 describe('Validate LibAV Custom Built Engines', async () => {
-    const engines = ['asm.mjs', 'wasm.mjs', 'thr.mjs'];
     
     for (const engine of engines) {
         it(`Successfully loads and hooks into the ${engine} engine binary natively`, async () => {

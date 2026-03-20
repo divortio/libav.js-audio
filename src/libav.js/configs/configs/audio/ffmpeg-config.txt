@@ -1,0 +1,184 @@
+--enable-protocol=data --enable-protocol=file
+--enable-swresample --enable-filter=aresample
+--enable-filter=acompressor --enable-filter=adeclick --enable-filter=adeclip
+--enable-filter=aecho --enable-filter=afade --enable-filter=aformat
+--enable-filter=agate --enable-filter=alimiter --enable-filter=amix
+--enable-filter=apad --enable-filter=asettb --enable-filter=asplit
+--enable-filter=atempo --enable-filter=atrim --enable-filter=bandpass
+--enable-filter=bandreject --enable-filter=dynaudnorm --enable-filter=equalizer
+--enable-filter=loudnorm --enable-filter=pan --enable-filter=amix
+--enable-filter=volume --enable-filter=anull
+--enable-decoder=aac
+--enable-encoder=aac
+--enable-decoder=alac
+--enable-encoder=alac
+--enable-decoder=flac
+--enable-encoder=flac
+--enable-libopus
+--enable-decoder=libopus
+--enable-bsf=opus_metadata
+--enable-encoder=libopus
+--enable-libvorbis
+--enable-decoder=libvorbis
+--enable-encoder=libvorbis
+--enable-decoder=pcm_f32le
+--enable-encoder=pcm_f32le
+--enable-decoder=mp3
+--enable-encoder=mp3
+--enable-decoder=mp3
+--enable-libmp3lame
+--enable-encoder=libmp3lame
+--enable-decoder=aac
+--enable-encoder=aac
+--enable-decoder=ac3
+--enable-decoder=alac
+--enable-encoder=alac
+--enable-decoder=flac
+--enable-encoder=flac
+--enable-libopus
+--enable-decoder=libopus
+--enable-bsf=opus_metadata
+--enable-encoder=libopus
+--enable-libvorbis
+--enable-decoder=libvorbis
+--enable-encoder=libvorbis
+--enable-decoder=mp1
+--enable-decoder=mp2
+--enable-decoder=pcm_f16le
+--enable-decoder=pcm_f24le
+--enable-decoder=pcm_f32be
+--enable-decoder=pcm_f32le
+--enable-decoder=pcm_f64be
+--enable-decoder=pcm_f64le
+--enable-decoder=pcm_s16be
+--enable-decoder=pcm_s16le
+--enable-decoder=pcm_s24be
+--enable-decoder=pcm_s24le
+--enable-decoder=pcm_s32be
+--enable-decoder=pcm_s32le
+--enable-decoder=pcm_s64be
+--enable-decoder=pcm_s64le
+--enable-decoder=pcm_s8
+--enable-decoder=pcm_u16be
+--enable-decoder=pcm_u16le
+--enable-decoder=pcm_u24be
+--enable-decoder=pcm_u24le
+--enable-decoder=pcm_u32be
+--enable-decoder=pcm_u32le
+--enable-decoder=pcm_u8
+--enable-encoder=pcm_f32le
+--enable-decoder=pcm_alaw
+--enable-decoder=pcm_mulaw
+--enable-decoder=adpcm_ima_qt
+--enable-decoder=adpcm_ima_wav
+--enable-decoder=gsm
+--enable-decoder=gsm_ms
+--enable-decoder=qoa
+--enable-decoder=ra_144
+--enable-decoder=ra_288
+--enable-decoder=ralf
+--enable-decoder=sipr
+--enable-decoder=wavpack
+--enable-decoder=wmalossless
+--enable-decoder=wmapro
+--enable-decoder=wmav1
+--enable-decoder=wmav2
+--enable-decoder=wmavoice
+--enable-decoder=cook
+--enable-decoder=dvaudio
+--enable-demuxer=aac
+--enable-muxer=adts
+--enable-demuxer=aac
+--enable-muxer=adts
+--enable-demuxer=flac
+--enable-muxer=flac
+--enable-demuxer=flac
+--enable-muxer=flac
+--enable-demuxer=mp3
+--enable-muxer=mp3
+--enable-demuxer=mp3
+--enable-muxer=mp3
+--enable-demuxer=ogg
+--enable-muxer=ogg
+--enable-demuxer=ogg
+--enable-muxer=ogg
+--enable-decoder=pcm_s16le --enable-decoder=pcm_s24le
+--enable-demuxer=wav
+--enable-encoder=pcm_s16le --enable-encoder=pcm_s24le
+--enable-muxer=wav
+--enable-decoder=pcm_s16le --enable-decoder=pcm_s24le
+--enable-demuxer=wav
+--enable-encoder=pcm_s16le --enable-encoder=pcm_s24le
+--enable-muxer=wav
+--enable-demuxer=aiff
+--enable-decoder=pcm_s16be --enable-decoder=pcm_s24be
+--enable-decoder=pcm_f32be
+--enable-muxer=aiff
+--enable-encoder=pcm_s16be --enable-encoder=pcm_s24be
+--enable-encoder=pcm_f32be
+--enable-demuxer=aiff
+--enable-decoder=pcm_s16be --enable-decoder=pcm_s24be
+--enable-decoder=pcm_f32be
+--enable-muxer=aiff
+--enable-encoder=pcm_s16be --enable-encoder=pcm_s24be
+--enable-encoder=pcm_f32be
+--enable-demuxer=qoa
+--enable-muxer=qoa
+--enable-demuxer=qoa
+--enable-muxer=qoa
+--enable-demuxer=au
+--enable-demuxer=caf
+--enable-demuxer=wv
+--enable-demuxer=pcm_f32le
+--enable-muxer=pcm_f32le
+--enable-demuxer=asf
+--enable-demuxer=avi
+--enable-demuxer=dv
+--enable-demuxer=flv
+--enable-demuxer=hls
+--enable-demuxer=matroska
+--enable-demuxer=mov
+--enable-demuxer=mpeg
+--enable-demuxer=mpegts
+--enable-demuxer=rm
+--enable-demuxer=matroska
+--enable-demuxer=mov
+--enable-muxer=ipod
+--enable-muxer=mov
+--enable-muxer=mp4
+--enable-demuxer=matroska
+--enable-muxer=matroska --enable-muxer=webm
+--enable-demuxer=hls
+--enable-muxer=hls
+--enable-muxer=ipod
+--enable-muxer=mov
+--enable-muxer=mp4
+--enable-muxer=matroska --enable-muxer=webm
+--enable-muxer=hls
+--enable-parser=aac
+--enable-parser=ac3
+--enable-parser=av1
+--enable-parser=cook
+--enable-parser=dvaudio
+--enable-parser=flac
+--enable-parser=h261
+--enable-parser=h263
+--enable-parser=h264
+--enable-parser=hevc
+--enable-parser=mpeg4video
+--enable-parser=mpegaudio
+--enable-parser=mpegvideo
+--enable-parser=opus
+--enable-parser=rv34
+--enable-parser=sipr
+--enable-parser=vorbis
+--enable-parser=vp8
+--enable-parser=vp9
+--enable-bsf=av1_metadata
+--enable-bsf=extract_extradata
+--enable-bsf=h264_metadata
+--enable-bsf=h264_mp4toannexb
+--enable-bsf=hevc_metadata
+--enable-bsf=hevc_mp4toannexb
+--enable-bsf=null
+--enable-bsf=vp9_metadata

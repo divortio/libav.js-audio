@@ -7,8 +7,6 @@ const engines = [
     'asm.mjs',
     'wasm.js',
     'wasm.mjs',
-    'thr.js',
-    'thr.mjs'
 ];
 
 test('libav.js advanced audio packaging validation', async (t) => {
