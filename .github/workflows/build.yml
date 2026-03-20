@@ -36,10 +36,3 @@ jobs:
           files: dist/libav-*-audio/*.zip
           generate_release_notes: true
 
-      - name: Trigger Downstream audio-decode-libav build
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.PAT }}
-          repository: divortio/audio-decode-libav
-          event-type: upstream-libav-updated
